@@ -1,12 +1,20 @@
-from django.shortcuts import render
+"""from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import CartItemSerializers
 from .models import CartItem
 from django.shortcuts import get_object_or_404
+import requests
+import json
+import http
+import urllib3
+from urllib3 import request
+import urllib.request
+
 
 # Create your views here.
+
 
 class CartItemViews(APIView):
     def post(self, request):
@@ -35,7 +43,13 @@ class CartItemViews(APIView):
             return Response({"status": "success", "data": serializer.data})
         else:
             return Response({"status": "error", "data": serializer.errors})
+
     def delete(self, request, id=None):
         item = get_object_or_404(CartItem, id=id)
         item.delete()
-        return Response({"status": "success", "data": "Item Deleted"})
+        return Response({"status": "success", "data": "Item Deleted"})"""
+import requests
+response = requests.get("https://api.stackexchange.com/2.3/answers?order=desc&sort=activity&site=stackoverflow",'/answer')
+print(response.status_code)
+print(response.json())
+

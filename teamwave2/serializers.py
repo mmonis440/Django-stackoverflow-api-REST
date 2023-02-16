@@ -8,6 +8,6 @@ class CartItemSerializers(serializers.ModelSerializer):
   product_quantity = serializers.IntegerField(required=False, default=1)
 
 
-class Meta:
+class meta:
     model = CartItem
     field = ('_all_')
